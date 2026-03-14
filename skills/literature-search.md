@@ -5,7 +5,7 @@ title: Literature Search
 description: "Searches academic databases and catalogues for papers matching a research topic"
 tags: [Tested]
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
   - target: semantic-scholar
     type: requires

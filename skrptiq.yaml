@@ -23,8 +23,6 @@ tags:
 # --- Security & Access ---
 requires:
   services:
-    - "anthropic-claude"
-    - "openai-gpt4"
     - "semantic-scholar"
   permissions: []
   data_handling: []

@@ -5,7 +5,7 @@ title: Source Summarisation
 description: "Condenses academic papers into key findings, methods, and conclusions"
 tags: [Production]
 connections:
-  - target: anthropic-claude
+  - target: llm-service
     type: runs_on
 ---
 

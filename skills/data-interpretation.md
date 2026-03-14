@@ -5,7 +5,7 @@ title: Data Interpretation
 description: "Analyses research findings and identifies patterns, trends, and contradictions"
 tags: [Needs Review]
 connections:
-  - target: openai-gpt4
+  - target: llm-service
     type: runs_on
 ---
 

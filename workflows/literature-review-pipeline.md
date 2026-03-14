@@ -19,9 +19,7 @@ connections:
     type: uses
   - target: literature-review-draft
     type: uses
-  - target: anthropic-claude
-    type: runs_on
-  - target: openai-gpt4
+  - target: llm-service
     type: runs_on
   - target: semantic-scholar
     type: runs_on
@@ -82,3 +80,48 @@ Invoke the **literature-review-draft** prompt to produce a complete review organ
 - If searches return too many results (over 500), add filters or narrow the research question
 - If papers are inaccessible (paywalled), note them as excluded with reason and suggest alternatives
 - If synthesis reveals insufficient evidence for a theme, flag it as a gap rather than speculating
+
+## Inputs
+
+| Name | Required | Description | Example |
+|------|----------|-------------|---------|
+| `{{input.research_question}}` | Yes | The research question guiding the review | "What is the impact of remote work on team productivity?" |
+| `{{input.search_terms}}` | Yes | Key search terms and phrases | "remote work, telecommuting, team productivity, distributed teams" |
+| `{{input.databases}}` | No | Target databases to search (defaults to Semantic Scholar) | "Semantic Scholar, PubMed" |
+| `{{input.inclusion_criteria}}` | No | Criteria for including papers in the review | "Published 2019-2024, peer-reviewed, English language" |
+| `{{input.exclusion_criteria}}` | No | Criteria for excluding papers | "Opinion pieces, conference abstracts only, non-empirical studies" |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| Literature review draft | A complete review organised by theme with proper citations |
+| Search strategy documentation | Record of all queries, databases, and screening decisions |
+| Paper summaries | Structured summaries of each included paper |
+| Synthesis report | Thematic analysis identifying consensus, contradictions, and gaps |
+
+## Setup
+
+Before running this workflow:
+
+1. **Semantic Scholar API access** — the literature search stage queries the Semantic Scholar API. No API key is required for basic access, but rate limits apply. For higher throughput, obtain a free API key from [Semantic Scholar](https://www.semanticscholar.org/product/api).
+2. **Define your research question** — have a clear, focused research question and initial search terms ready before starting.
+
+No specific AI provider or API key is required beyond your configured skrptiq LLM provider.
+
+## Provider Notes
+
+- Works with any model — no specific provider requirements
+- Longer context windows are beneficial when synthesising many paper summaries in Stage 4 and 5
+- Estimated duration is 30-60 minutes depending on the breadth of the search
+
+## Example Input
+
+To test this workflow immediately after import:
+
+```
+Research question: "How does pair programming affect code quality and developer satisfaction?"
+Search terms: "pair programming, code quality, developer satisfaction, collaborative coding, XP practices"
+Inclusion criteria: "Peer-reviewed, published 2015-2024, empirical studies"
+Exclusion criteria: "Grey literature, studies with fewer than 10 participants"
+```
