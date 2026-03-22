@@ -3,7 +3,7 @@ type: prompt
 id: literature-review-draft
 title: Literature Review Draft
 description: "Drafts a complete literature review from synthesised research findings"
-tags: []
+tags: [Production]
 connections:
   - target: source-summarisation
     type: derived_from
@@ -34,11 +34,13 @@ You are an academic writer. Using the synthesis report and paper summaries below
 
 ### Inputs
 
-- **Synthesis report:** {synthesis}
-- **Paper summaries:** {summaries}
-- **Research question:** {question}
-- **Target length:** {length}
-- **Citation style:** {citation_style}
+This prompt receives the following data from the previous pipeline stages:
+
+- **Synthesis report** — the thematic analysis and cross-paper synthesis produced by the data interpretation stage
+- **Paper summaries** — the structured summaries of each individual paper from the source summarisation stage
+- **Research question** — the original research question guiding the literature review
+- **Target length** — the desired word count or page length for the review draft
+- **Citation style** — the referencing format to use (defaults to APA 7th edition if not specified)
 
 ## Formatting Rules
 

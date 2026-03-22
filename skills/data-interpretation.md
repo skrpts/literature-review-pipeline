@@ -3,7 +3,7 @@ type: skill
 id: data-interpretation
 title: Data Interpretation
 description: "Analyses research findings and identifies patterns, trends, and contradictions"
-tags: [Needs Review]
+tags: [Production]
 connections:
   - target: llm-service
     type: runs_on

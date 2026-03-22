@@ -3,7 +3,7 @@ type: prompt
 id: summarise-source
 title: Summarise Source
 description: "Produces a structured summary of an academic paper"
-tags: []
+tags: [Production]
 connections:
   - target: source-summarisation
     type: derived_from
@@ -31,9 +31,11 @@ You are a research assistant. Read the academic paper below and produce a struct
 
 ### Inputs
 
-- **Paper text:** {paper}
-- **Reviewer's research question:** {question}
-- **Summary format:** {format}
+This prompt receives the following data from the previous pipeline stage:
+
+- **Paper text** — the full text of the academic paper to summarise, as retrieved by the search stage
+- **Reviewer's research question** — the original research question guiding the literature review
+- **Summary format** — the requested output structure (e.g. narrative, tabular, or annotated bibliography)
 
 ## Formatting Rules
 

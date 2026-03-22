@@ -3,7 +3,7 @@ type: asset
 id: prisma-flow-diagram-template
 title: PRISMA Flow Diagram Template
 description: "Template for the PRISMA 2020 flow diagram showing study selection process"
-tags: []
+tags: [Production]
 connections: []
 ---
 

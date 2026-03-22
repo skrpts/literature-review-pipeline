@@ -3,7 +3,7 @@ type: prompt
 id: search-literature
 title: Search Literature
 description: "Constructs and executes academic database searches for a research topic"
-tags: []
+tags: [Production]
 connections:
   - target: literature-search
     type: derived_from
@@ -18,7 +18,7 @@ Drives the literature search skill by constructing systematic search queries and
 
 ## Prompt
 
-You are a research librarian. Construct a comprehensive search strategy for the research topic below. For each database:
+You are a research librarian. Construct a systematic search strategy for the research topic below. For each database:
 
 1. **Build the search query** — use Boolean operators (AND, OR, NOT), truncation, and proximity operators appropriate to the database
 2. **Define inclusion criteria** — date range, language, publication type, peer-reviewed status
@@ -28,11 +28,11 @@ You are a research librarian. Construct a comprehensive search strategy for the 
 
 ### Inputs
 
-- **Research question:** {question}
-- **Target databases:** {databases}
-- **Date range:** {date_range}
-- **Search terms and synonyms:** {terms}
-- **Inclusion/exclusion criteria:** {criteria}
+- **Research question:** {{input.research_question}}
+- **Search terms and synonyms:** {{input.search_terms}}
+- **Target databases:** {{input.databases}}
+- **Inclusion criteria:** {{input.inclusion_criteria}}
+- **Exclusion criteria:** {{input.exclusion_criteria}}
 
 ## Formatting Rules
 

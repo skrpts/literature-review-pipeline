@@ -3,7 +3,7 @@ type: prompt
 id: interpret-data
 title: Interpret Data
 description: "Analyses and synthesises findings across multiple research papers"
-tags: []
+tags: [Production]
 connections:
   - target: data-interpretation
     type: derived_from
@@ -30,9 +30,11 @@ You are a research analyst. Analyse the collection of paper summaries below and 
 
 ### Inputs
 
-- **Paper summaries:** {summaries}
-- **Research question:** {question}
-- **Thematic categories (optional):** {themes}
+This prompt receives the following data from the previous pipeline stage:
+
+- **Paper summaries** — the structured summaries produced by the source summarisation stage, one per paper
+- **Research question** — the original research question guiding the literature review
+- **Thematic categories (optional)** — any predefined themes or categories to organise the synthesis around, if provided by the reviewer
 
 ## Formatting Rules
 
