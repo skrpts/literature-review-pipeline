@@ -30,10 +30,8 @@ You are a research analyst. Analyse the collection of paper summaries below and 
 
 ### Inputs
 
-This prompt receives the following data from the previous pipeline stage:
-
-- **Paper summaries** — the structured summaries produced by the source summarisation stage, one per paper
-- **Research question** — the original research question guiding the literature review
+- **Paper summaries:** {{steps.summarise-source.output}}
+- **Research question:** {{input.research_question}}
 - **Thematic categories (optional)** — any predefined themes or categories to organise the synthesis around, if provided by the reviewer
 
 ## Formatting Rules

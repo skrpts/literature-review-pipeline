@@ -31,10 +31,8 @@ You are a research assistant. Read the academic paper below and produce a struct
 
 ### Inputs
 
-This prompt receives the following data from the previous pipeline stage:
-
-- **Paper text** — the full text of the academic paper to summarise, as retrieved by the search stage
-- **Reviewer's research question** — the original research question guiding the literature review
+- **Paper text:** {{steps.search-literature.output}}
+- **Reviewer's research question:** {{input.research_question}}
 - **Summary format** — the requested output structure (e.g. narrative, tabular, or annotated bibliography)
 
 ## Formatting Rules
