@@ -23,8 +23,12 @@ tags:
 # --- Security & Access ---
 requires:
   services:
+    - "llm-service"
     - "semantic-scholar"
-  permissions: []
+  permissions:
+    - "network:doi.org"
+    - "network:www.example.com"
+    - "network:www.semanticscholar.org"
   data_handling: []
 
 # --- Contents ---
