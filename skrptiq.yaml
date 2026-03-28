@@ -1,4 +1,5 @@
 # --- Identity ---
+id: "745f9aa7-c276-40f4-a98c-b336896a0ff0"
 name: "literature-review-pipeline"
 display_name: "Literature Review Pipeline"
 description: "Search, summarise, synthesise, and write a literature review"
