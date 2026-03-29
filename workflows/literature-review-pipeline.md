@@ -11,11 +11,19 @@ connections:
     type: uses
   - target: data-interpretation
     type: uses
+  - target: citation-extraction
+    type: uses
+  - target: methodology-assessment
+    type: uses
   - target: search-literature
     type: uses
   - target: summarise-source
     type: uses
   - target: interpret-data
+    type: uses
+  - target: extract-citations
+    type: uses
+  - target: assess-methodology
     type: uses
   - target: literature-review-draft
     type: uses
@@ -23,6 +31,8 @@ connections:
     type: runs_on
   - target: semantic-scholar
     type: runs_on
+  - target: apa-7th-edition
+    type: references
 metadata:
   estimated_duration: "30-60 minutes"
   trigger: manual

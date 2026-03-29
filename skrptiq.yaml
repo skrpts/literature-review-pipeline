@@ -3,7 +3,7 @@ id: "745f9aa7-c276-40f4-a98c-b336896a0ff0"
 name: "literature-review-pipeline"
 display_name: "Literature Review Pipeline"
 description: "Search, summarise, synthesise, and write a literature review"
-version: "1.4.0"
+version: "1.0.0"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -30,15 +30,17 @@ requires:
     - "network:doi.org"
     - "network:www.example.com"
     - "network:www.semanticscholar.org"
+    - "network:www.who.int"
+    - "network:www.ons.gov.uk"
   data_handling: []
 
 # --- Contents ---
 contents:
-  skills: 3
-  prompts: 4
+  skills: 5
+  prompts: 6
   workflows: 1
   services: 1
   sources: 1
   documents: 1
   assets: 1
-  total: 12
+  total: 16
