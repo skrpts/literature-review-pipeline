@@ -3,7 +3,7 @@ type: skill
 id: source-summarisation
 title: Source Summarisation
 description: "Condenses academic papers into key findings, methods, and conclusions"
-tags: [Production]
+tags: [Production, analysis:source, research:literature]
 connections:
   - target: llm-service
     type: runs_on
