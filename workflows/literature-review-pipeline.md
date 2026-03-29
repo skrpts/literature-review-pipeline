@@ -3,7 +3,7 @@ type: workflow
 id: literature-review-pipeline
 title: Literature Review Pipeline
 description: "Search, summarise, synthesise, and write a literature review"
-tags: [Production, research:literature, writing:academic]
+tags: [Production, Academic, Research]
 connections:
   - target: literature-search
     type: uses

@@ -3,7 +3,7 @@ type: prompt
 id: search-literature
 title: Search Literature
 description: "Constructs and executes academic database searches for a research topic"
-tags: [Production, research:literature, writing:academic]
+tags: [Production, Academic, Research]
 connections:
   - target: literature-search
     type: derived_from

@@ -3,7 +3,7 @@ type: document
 id: literature-search-log
 title: Literature Search Log
 description: "Working document to track search queries, results, and screening decisions"
-tags: [Production, research:literature, writing:academic]
+tags: [Production, Academic, Research]
 connections: []
 ---
 

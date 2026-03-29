@@ -3,7 +3,7 @@ type: prompt
 id: interpret-data
 title: Interpret Data
 description: "Analyses and synthesises findings across multiple research papers"
-tags: [Production, analysis:data, data:quantitative]
+tags: [Production, Academic, Data]
 connections:
   - target: data-interpretation
     type: derived_from

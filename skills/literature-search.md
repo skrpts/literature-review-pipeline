@@ -3,7 +3,7 @@ type: skill
 id: literature-search
 title: Literature Search
 description: "Searches academic databases and catalogues for papers matching a research topic"
-tags: [Tested, research:literature, writing:academic]
+tags: [Tested, Academic, Research]
 connections:
   - target: llm-service
     type: runs_on

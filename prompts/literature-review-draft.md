@@ -3,7 +3,7 @@ type: prompt
 id: literature-review-draft
 title: Literature Review Draft
 description: "Drafts a complete literature review from synthesised research findings"
-tags: [Production, writing:academic, research:literature]
+tags: [Production, Academic, Research]
 connections:
   - target: source-summarisation
     type: derived_from

@@ -3,7 +3,7 @@ type: prompt
 id: summarise-source
 title: Summarise Source
 description: "Produces a structured summary of an academic paper"
-tags: [Production, analysis:source, research:literature]
+tags: [Production, Academic, Research]
 connections:
   - target: source-summarisation
     type: derived_from
