@@ -33,13 +33,13 @@ connections:
     type: runs_on
   - target: apa-7th-edition
     type: references
-metadata:
-  estimated_duration: "30-60 minutes"
-  trigger: manual
   - target: literature-search-log
     type: references
   - target: prisma-flow-diagram-template
     type: references
+metadata:
+  estimated_duration: "30-60 minutes"
+  trigger: manual
 ---
 
 ## Overview
