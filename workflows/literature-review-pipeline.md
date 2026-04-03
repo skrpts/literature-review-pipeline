@@ -37,6 +37,10 @@ connections:
     type: references
   - target: prisma-flow-diagram-template
     type: references
+  - target: evidence-claim-check
+    type: uses
+  - target: dedup-and-merge
+    type: uses
 metadata:
   estimated_duration: "30-60 minutes"
   trigger: manual
