@@ -15,18 +15,6 @@ connections:
     type: uses
   - target: methodology-assessment
     type: uses
-  - target: search-literature
-    type: uses
-  - target: summarise-source
-    type: uses
-  - target: interpret-data
-    type: uses
-  - target: extract-citations
-    type: uses
-  - target: assess-methodology
-    type: uses
-  - target: literature-review-draft
-    type: uses
   - target: llm-service
     type: runs_on
   - target: semantic-scholar
