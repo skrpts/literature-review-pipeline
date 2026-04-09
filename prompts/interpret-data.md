@@ -30,7 +30,7 @@ You are a research analyst. Analyse the collection of paper summaries below and 
 
 ### Inputs
 
-- **Paper summaries:** {{steps.summarise-source.output}}
+- **Paper summaries:** {{steps.Source Summarisation.output}}
 - **Research question:** {{input.research_question}}
 - **Thematic categories (optional)** — any predefined themes or categories to organise the synthesis around, if provided by the reviewer
 

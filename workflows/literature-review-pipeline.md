@@ -29,6 +29,8 @@ connections:
     type: uses
   - target: dedup-and-merge
     type: uses
+  - target: gap-analysis
+    type: uses
 metadata:
   estimated_duration: "30-60 minutes"
   trigger: manual

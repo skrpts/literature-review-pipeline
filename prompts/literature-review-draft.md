@@ -34,8 +34,8 @@ You are an academic writer. Using the synthesis report and paper summaries below
 
 ### Inputs
 
-- **Synthesis report:** {{steps.interpret-data.output}}
-- **Paper summaries:** {{steps.summarise-source.output}}
+- **Synthesis report:** {{steps.Data Interpretation.output}}
+- **Paper summaries:** {{steps.Source Summarisation.output}}
 - **Research question:** {{input.research_question}}
 - **Target length** — the desired word count or page length for the review draft
 - **Citation style** — the referencing format to use (defaults to APA 7th edition if not specified)
