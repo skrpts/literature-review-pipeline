@@ -3,7 +3,7 @@ id: "745f9aa7-c276-40f4-a98c-b336896a0ff0"
 name: "literature-review-pipeline"
 display_name: "Literature Review Pipeline"
 description: "Search, summarise, synthesise, and write a literature review"
-version: "1.2.3"
+version: "1.2.4"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -37,10 +37,10 @@ requires:
 # --- Contents ---
 contents:
   skills: 8
-  prompts: 7
+  prompts: 8
   workflows: 1
   services: 2
   sources: 1
   documents: 1
   assets: 1
-  total: 21
+  total: 22
