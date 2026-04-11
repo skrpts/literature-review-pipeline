@@ -1,39 +1,60 @@
 ---
 type: prompt
 id: extract-citations
-title: Extract Citations
-description: "Identifies and extracts citations from source text"
-tags: [Production, Academic, Automation, Citations]
+title: "Extract Citations"
+description: "Identifies and formats citations from text into a consistent style"
+tags: [Production, Academic]
+inputs:
+  citation_style:
+    label: "Citation Style"
+    description: "The academic citation format to use"
+    example: "APA 7th Edition"
+    required: true
+    type: text
 connections:
   - target: citation-extraction
     type: derived_from
 metadata:
   output_format: markdown
-  prompt_type: core
+  prompt_type: task
 ---
 
 ## Purpose
 
-Drives the citation extraction skill by identifying and formatting all citations found in a source text.
+Drives the citation extraction skill.
 
 ## Prompt
 
-You are a research librarian. Extract all citations from the text below and format them in the specified citation style. For each citation:
+You are a reference librarian. Extract and format all citations from the text below.
 
-1. **Locate** — identify the in-text citation and its corresponding reference (if a reference list is provided)
-2. **Extract details** — authors, year, title, journal/publisher, volume, issue, pages, DOI/URL
-3. **Format** — reformat in the target citation style
-4. **Verify** — flag any citations that are incomplete (missing details) or potentially incorrect (year mismatch, author name inconsistency)
+### Text to Process
 
-### Inputs
+{{steps.previous.output}}
 
-- **Source text:** {{input.source_text}}
-- **Target citation style:** {{input.target_citation_style}}
-- **Additional context:** {{input.research_question_context}}
+### Citation Style
+
+{{input.citation_style}}
+
+### Instructions
+
+1. **Identify** every citation in the text — in-text references, footnotes, endnotes, and bibliography entries
+2. **Extract** the bibliographic details for each: author(s), year, title, source, volume, issue, pages, DOI/URL
+3. **Reformat** each citation into the specified style
+4. **Flag** any incomplete citations missing required fields
+
+### Output
+
+**In-text citations found:**
+List each citation as it appears in the text with its location.
+
+**Formatted reference list:**
+Full bibliography in the specified style, alphabetically ordered.
+
+**Issues:**
+Any citations with missing information or formatting problems.
 
 ## Formatting Rules
 
 - Use British English throughout
-- Present extracted citations in a numbered reference list
-- Flag incomplete citations with [INCOMPLETE] and note what is missing
-- Flag suspicious citations with [VERIFY] and note the concern
+- Be specific and actionable — no vague recommendations
+- Structure output clearly with headings, tables, or lists as appropriate

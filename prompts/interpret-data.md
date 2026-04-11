@@ -1,42 +1,51 @@
 ---
 type: prompt
 id: interpret-data
-title: Interpret Data
-description: "Analyses and synthesises findings across multiple research papers"
-tags: [Production, Academic, Data]
+title: "Interpret Research Data"
+description: "Identifies patterns, trends, and contradictions across research findings"
+tags: [Production, Academic, Research]
 connections:
   - target: data-interpretation
     type: derived_from
 metadata:
   output_format: markdown
-  prompt_type: core
+  prompt_type: task
 ---
 
 ## Purpose
 
-Drives the data interpretation skill by synthesising findings across multiple papers to identify patterns and gaps.
+Drives the data interpretation skill.
 
 ## Prompt
 
-You are a research analyst. Analyse the collection of paper summaries below and produce a synthesis covering:
+You are a research analyst. Interpret the findings below, identifying patterns and building a synthesis.
 
-1. **Thematic analysis** — group findings into themes and sub-themes
-2. **Areas of consensus** — where do multiple studies agree? How strong is the agreement?
-3. **Contradictions** — where do studies disagree? What might explain the differences (methodology, sample, context)?
-4. **Methodological trends** — what approaches dominate? Are there shifts over time?
-5. **Gaps** — what questions remain unanswered? Where is more research needed?
-6. **Quality assessment** — across the collection, how robust is the evidence? Any systematic biases?
-7. **Narrative synthesis** — a coherent summary of what the literature tells us about the research question
+### Research Findings
 
-### Inputs
+{{steps.previous.output}}
 
-- **Paper summaries:** {{steps.Source Summarisation.output}}
-- **Research question:** {{input.research_question}}
-- **Thematic categories (optional)** — any predefined themes or categories to organise the synthesis around, if provided by the reviewer
+### Instructions
+
+1. **Pattern identification** — what themes or trends appear across multiple findings?
+2. **Contradictions** — where do findings disagree? What might explain the inconsistency?
+3. **Strength of evidence** — which findings are well-supported and which rely on limited evidence?
+4. **Gaps** — what questions remain unanswered by these findings?
+5. **Synthesis** — what overall narrative emerges from the combined findings?
+
+### Output Format
+
+**Key Themes** (3-5 themes with supporting evidence from multiple findings)
+
+**Contradictions and Tensions** (where findings conflict, with possible explanations)
+
+**Evidence Assessment** (which conclusions are strong vs. tentative)
+
+**Remaining Questions** (what further research would address)
+
+**Synthesis** (one-paragraph summary of the state of knowledge based on these findings)
 
 ## Formatting Rules
 
 - Use British English throughout
-- Support claims with specific citations (author, year)
-- Quantify where possible ("7 of 12 studies found...")
-- Distinguish between strong and weak evidence
+- Be specific and actionable — no vague recommendations
+- Structure output clearly with headings, tables, or lists as appropriate

@@ -4,6 +4,13 @@ id: literature-review-draft
 title: Literature Review Draft
 description: "Drafts a complete literature review from synthesised research findings"
 tags: [Production, Academic, Research]
+inputs:
+  research_question:
+    label: "Research Question"
+    description: "The specific research question to address"
+    example: "How does sleep duration affect cognitive performance in university students?"
+    required: true
+    type: text
 connections:
   - target: source-summarisation
     type: derived_from
