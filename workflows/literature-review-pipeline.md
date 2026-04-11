@@ -34,6 +34,22 @@ connections:
 metadata:
   estimated_duration: "30-60 minutes"
   trigger: manual
+execution:
+  - skill: "literature-search"
+  - skill: "source-summarisation"
+    input_from: "literature-search"
+  - skill: "data-interpretation"
+    input_from: "source-summarisation"
+  - skill: "citation-extraction"
+    input_from: "data-interpretation"
+  - skill: "dedup-and-merge"
+    input_from: "citation-extraction"
+  - skill: "gap-analysis"
+    input_from: "dedup-and-merge"
+  - skill: "methodology-assessment"
+    input_from: "gap-analysis"
+  - skill: "evidence-claim-check"
+    input_from: "gap-analysis"
 ---
 
 ## Overview
