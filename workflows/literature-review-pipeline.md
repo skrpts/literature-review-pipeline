@@ -15,6 +15,10 @@ connections:
     type: uses
   - target: methodology-assessment
     type: uses
+  - target: language-polish
+    type: uses
+  - target: consistency-check
+    type: uses
   - target: llm-service
     type: runs_on
   - target: semantic-scholar
@@ -34,7 +38,7 @@ connections:
 metadata:
   estimated_duration: "30-60 minutes"
   trigger: manual
-output_step: "gap-analysis"
+output_step: "language-polish"
 composite_steps:
   - "literature-search"
   - "source-summarisation"
@@ -44,6 +48,8 @@ composite_steps:
   - "evidence-claim-check"
   - "dedup-and-merge"
   - "gap-analysis"
+  - "consistency-check"
+  - "language-polish"
 execution:
   - skill: "literature-search"
     step_type: "synthesis"
@@ -64,6 +70,11 @@ execution:
       step_type: "review"
   - skill: "methodology-assessment"
     step_type: "review"
+  - skill: "language-polish"
+    step_type: "content"
+  - parallel:
+    - skill: "consistency-check"
+      step_type: "review"
 ---
 
 ## Overview
