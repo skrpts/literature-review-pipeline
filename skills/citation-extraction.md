@@ -4,6 +4,12 @@ id: citation-extraction
 title: Citation Extraction
 description: "Identifies and formats citations from text"
 tags: [Tested, Academic, Citations]
+context_params:
+  citation_style:
+    label: "Citation Style"
+    description: "The academic citation format to use"
+    default: "Harvard"
+    required: false
 connections:
   - target: llm-service
     type: runs_on

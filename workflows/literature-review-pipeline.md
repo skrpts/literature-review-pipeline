@@ -53,6 +53,8 @@ execution:
     step_type: "synthesis"
   - skill: "citation-extraction"
     step_type: "synthesis"
+    context:
+      citation_style: "Harvard"
   - skill: "dedup-and-merge"
     step_type: "synthesis"
   - skill: "gap-analysis"
