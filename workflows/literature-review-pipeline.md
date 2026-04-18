@@ -55,6 +55,7 @@ execution:
     step_type: "synthesis"
   - skill: "source-summarisation"
     step_type: "synthesis"
+    prompt: "summarise-source"
   - skill: "data-interpretation"
     step_type: "synthesis"
   - skill: "citation-extraction"
