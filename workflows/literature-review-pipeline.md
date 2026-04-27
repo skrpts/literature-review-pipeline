@@ -52,29 +52,37 @@ composite_steps:
   - "language-polish"
 execution:
   - skill: "literature-search"
+    prompt: "search-literature"
     step_type: "synthesis"
   - skill: "source-summarisation"
     step_type: "synthesis"
     prompt: "summarise-source"
   - skill: "data-interpretation"
+    prompt: "interpret-data"
     step_type: "synthesis"
   - skill: "citation-extraction"
+    prompt: "extract-citations"
     step_type: "synthesis"
     context:
       citation_style: "Harvard"
   - skill: "dedup-and-merge"
     step_type: "synthesis"
   - skill: "gap-analysis"
+    prompt: "identify-research-gaps"
     step_type: "synthesis"
   - parallel:
     - skill: "evidence-claim-check"
+      prompt: "check-evidence-claims"
       step_type: "review"
   - skill: "methodology-assessment"
+    prompt: "assess-methodology"
     step_type: "review"
   - skill: "language-polish"
+    prompt: "polish-language"
     step_type: "content"
   - parallel:
     - skill: "consistency-check"
+      prompt: "check-consistency"
       step_type: "review"
 ---
 
