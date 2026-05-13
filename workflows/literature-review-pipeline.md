@@ -66,7 +66,7 @@ execution:
     context:
       citation_style: "Harvard"
   - skill: "dedup-and-merge"
-    step_type: "synthesis"
+    step_type: "local.transform"
   - skill: "gap-analysis"
     prompt: "identify-research-gaps"
     step_type: "synthesis"
@@ -75,7 +75,7 @@ execution:
       prompt: "check-evidence-claims"
       step_type: "review"
       context:
-        evidence_rigour: ""
+        evidence_rigour: "Standard"
   - skill: "methodology-assessment"
     prompt: "assess-methodology"
     step_type: "review"
@@ -83,15 +83,15 @@ execution:
     prompt: "polish-language"
     step_type: "content"
     context:
-      voice_profile: ""
-      grammar_strictness: ""
+      voice_profile: "Neutral professional tone"
+      grammar_strictness: "Professional"
   - parallel:
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
       context:
-        voice_profile: ""
-        consistency_strictness: ""
+        voice_profile: "Neutral professional tone"
+        consistency_strictness: "Standard"
 ---
 
 ## Overview
