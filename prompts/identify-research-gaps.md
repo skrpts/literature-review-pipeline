@@ -45,6 +45,10 @@ You are a research analyst specialising in literature gap analysis. Based on the
 - **Literature summary:** {{input.literature_summary}}
 - **Known limitations:** {{input.known_limitations}}
 
+### Prior Analysis
+
+{{steps.previous.output}}
+
 ### Instructions
 
 Analyse the provided literature and context to identify:
