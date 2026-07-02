@@ -59,6 +59,10 @@ execution:
     step_type: "synthesis"
     prompt: "summarise-source"
     output: { name: "summaries", type: "text" }
+    bindings:
+      source_text:
+        from_step: "Literature Search"
+        field: output
   - skill: "data-interpretation"
     prompt: "interpret-data"
     step_type: "synthesis"
