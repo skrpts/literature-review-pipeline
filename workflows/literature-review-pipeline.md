@@ -54,34 +54,43 @@ execution:
   - skill: "literature-search"
     prompt: "search-literature"
     step_type: "synthesis"
+    output: { name: "sources", type: "list" }
   - skill: "source-summarisation"
     step_type: "synthesis"
     prompt: "summarise-source"
+    output: { name: "summaries", type: "text" }
   - skill: "data-interpretation"
     prompt: "interpret-data"
     step_type: "synthesis"
+    output: { name: "interpretation", type: "text" }
   - skill: "citation-extraction"
     prompt: "extract-citations"
     step_type: "synthesis"
+    output: { name: "citations", type: "list" }
     context:
       citation_style: "Harvard"
   - skill: "dedup-and-merge"
     step_type: "local.transform"
+    output: { name: "merged_sources", type: "text" }
   - skill: "gap-analysis"
     prompt: "identify-research-gaps"
     step_type: "synthesis"
+    output: { name: "research_gaps", type: "text" }
   - parallel:
     - skill: "evidence-claim-check"
       prompt: "check-evidence-claims"
       step_type: "review"
+      output: { name: "evidence_report", type: "text" }
       context:
         evidence_rigour: "Standard"
   - skill: "methodology-assessment"
     prompt: "assess-methodology"
     step_type: "review"
+    output: { name: "methodology_assessment", type: "text" }
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    output: { name: "polished_review", type: "text" }
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
@@ -89,6 +98,7 @@ execution:
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
+      output: { name: "consistency_verdict", type: "decision" }
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"

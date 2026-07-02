@@ -3,7 +3,7 @@ id: "745f9aa7-c276-40f4-a98c-b336896a0ff0"
 name: "literature-review-pipeline"
 display_name: "Literature Review Pipeline"
 description: "Search, summarise, synthesise, and write a literature review"
-version: "1.2.27"
+version: "1.2.28"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -134,3 +134,17 @@ contents:
   documents: 1
   assets: 1
   total: 7
+
+security:
+  status: "pass"
+  scanned_at: "2026-07-02T20:17:57.603Z"
+  scanner_version: "3.3.0"
+  syntactic: "pass"
+  structural: "pass"
+  detected:
+    services: ["llm-service"]
+    permissions: ["network:www.semanticscholar.org"]
+    data_handling: []
+  undeclared: []
+  warnings: []
+  report_url: "https://hub.skrptiq.ai/skrpts/literature-review-pipeline/security"
