@@ -2,7 +2,7 @@
 type: skill
 id: literature-search
 title: Literature Search
-description: "Searches academic databases and catalogues for papers matching a research topic"
+description: "Searches academic databases and catalogs for papers matching a research topic"
 tags: [Tested, Academic, Research]
 connections:
   - target: llm-service
@@ -13,7 +13,7 @@ connections:
 
 ## Capability
 
-Searches academic databases and catalogues for papers, articles, and books matching a research topic or question. Constructs search queries using Boolean operators, filters by date range, publication type, and citation count, and returns structured results.
+Searches academic databases and catalogs for papers, articles, and books matching a research topic or question. Constructs search queries using Boolean operators, filters by date range, publication type, and citation count, and returns structured results.
 
 ## When to Use
 

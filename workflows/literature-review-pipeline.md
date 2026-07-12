@@ -2,7 +2,7 @@
 type: workflow
 id: literature-review-pipeline
 title: Literature Review Pipeline
-description: "Search, summarise, synthesise, and write a literature review"
+description: "Search, summarize, synthesize, and write a literature review"
 tags: [Production, Academic, Research]
 connections:
   - target: literature-search
@@ -14,6 +14,8 @@ connections:
   - target: citation-extraction
     type: uses
   - target: methodology-assessment
+    type: uses
+  - target: literature-review-drafting
     type: uses
   - target: language-polish
     type: uses
@@ -45,6 +47,7 @@ composite_steps:
   - "data-interpretation"
   - "citation-extraction"
   - "methodology-assessment"
+  - "literature-review-drafting"
   - "evidence-claim-check"
   - "dedup-and-merge"
   - "gap-analysis"
@@ -91,6 +94,10 @@ execution:
     prompt: "assess-methodology"
     step_type: "review"
     output: { name: "methodology_assessment", type: "text" }
+  - skill: "literature-review-drafting"
+    prompt: "literature-review-draft"
+    step_type: "generation"
+    output: { name: "review_draft", type: "text" }
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
@@ -98,6 +105,10 @@ execution:
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
+    bindings:
+      source:
+        from_step: "Literature Review Drafting"
+        field: output
   - parallel:
     - skill: "consistency-check"
       prompt: "check-consistency"
@@ -110,7 +121,7 @@ execution:
 
 ## Overview
 
-This workflow conducts a complete literature review from initial search through to a written review draft. It follows academic best practices for systematic searching, screening, summarisation, and synthesis.
+This workflow conducts a complete literature review from initial search through to a written review draft. It follows academic best practices for systematic searching, screening, summarization, and synthesis.
 
 ## Pipeline Stages
 
@@ -130,7 +141,7 @@ Manual stage with AI assistance. Screen titles and abstracts against inclusion c
 
 **Output:** Final set of included papers.
 
-### Stage 3: Summarisation
+### Stage 3: Summarization
 
 **Input:** Included papers from Stage 2, research question
 
@@ -142,7 +153,7 @@ Invoke the **source-summarisation** skill via the **summarise-source** prompt fo
 
 **Input:** Paper summaries from Stage 3, research question
 
-Invoke the **data-interpretation** skill via the **interpret-data** prompt to synthesise findings across papers. Identify themes, consensus, contradictions, and gaps.
+Invoke the **data-interpretation** skill via the **interpret-data** prompt to synthesize findings across papers. Identify themes, consensus, contradictions, and gaps.
 
 **Output:** Synthesis report with thematic analysis.
 
@@ -150,9 +161,17 @@ Invoke the **data-interpretation** skill via the **interpret-data** prompt to sy
 
 **Input:** Synthesis report from Stage 4, paper summaries from Stage 3
 
-Invoke the **literature-review-draft** prompt to produce a complete review organised by theme with proper citations.
+Invoke the **literature-review-draft** prompt to produce a complete review organized by theme with proper citations.
 
 **Output:** Literature review draft ready for revision.
+
+### Stage 6: Review and Polish
+
+**Input:** The literature review draft
+
+The draft is language-polished into the final review; alongside it, the evidence-claim, methodology, and consistency checks run as advisory reviews flagging unsupported claims, methodological concerns, and voice/format inconsistencies.
+
+**Output:** The polished literature review (the workflow's final output), plus advisory review notes.
 
 ## Error Handling
 
@@ -175,7 +194,7 @@ Invoke the **literature-review-draft** prompt to produce a complete review organ
 
 | Name | Description |
 |------|-------------|
-| Literature review draft | A complete review organised by theme with proper citations |
+| Literature review draft | A complete review organized by theme with proper citations |
 | Search strategy documentation | Record of all queries, databases, and screening decisions |
 | Paper summaries | Structured summaries of each included paper |
 | Synthesis report | Thematic analysis identifying consensus, contradictions, and gaps |
@@ -192,7 +211,7 @@ No specific AI provider or API key is required beyond your configured skrptiq LL
 ## Provider Notes
 
 - Works with any model — no specific provider requirements
-- Longer context windows are beneficial when synthesising many paper summaries in Stage 4 and 5
+- Longer context windows are beneficial when synthesizing many paper summaries in Stage 4 and 5
 - Estimated duration is 30-60 minutes depending on the breadth of the search
 
 ## Example Input
