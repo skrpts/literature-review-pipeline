@@ -3,7 +3,7 @@ id: "745f9aa7-c276-40f4-a98c-b336896a0ff0"
 name: "literature-review-pipeline"
 display_name: "Literature Review Pipeline"
 description: "Search, summarize, synthesize, and write a literature review"
-version: "1.2.30"
+version: "1.2.33"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -61,8 +61,8 @@ dependencies:
     checksum: "sha256:680ca03bdf16b0658495ea61256b28b7009725da8f82a69deb856fe72d76b0e4"
   - id: "6190b836-2019-4432-8a3e-95c59160aacb"
     name: "dedup-and-merge"
-    version: 1.0.2
-    checksum: "sha256:8da181ebfad7400c8099dbd7f15d05c6e4072a3d000b9cd19808768d1a8dd14f"
+    version: 1.0.4
+    checksum: "sha256:8a51e7692b7f894aa4b98a59ee1c4cc103c377d58f28feb1a16149d659925da3"
   - id: "540e3a71-056b-4bb0-a09a-013690b63dbb"
     name: "evidence-claim-check"
     version: 1.0.2
@@ -137,7 +137,7 @@ contents:
 
 security:
   status: "pass"
-  scanned_at: "2026-07-12T13:46:07.064Z"
+  scanned_at: "2026-10-18T06:25:17.910Z"
   scanner_version: "3.3.0"
   syntactic: "pass"
   structural: "pass"

@@ -77,7 +77,8 @@ execution:
     context:
       citation_style: "Harvard"
   - skill: "dedup-and-merge"
-    step_type: "local.transform"
+    prompt: "dedup-and-merge"
+    step_type: "synthesis"
     output: { name: "merged_sources", type: "text" }
   - skill: "gap-analysis"
     prompt: "identify-research-gaps"
@@ -189,6 +190,10 @@ The draft is language-polished into the final review; alongside it, the evidence
 | `{{input.databases}}` | No | Target databases to search (defaults to Semantic Scholar) | "Semantic Scholar, PubMed" |
 | `{{input.inclusion_criteria}}` | No | Criteria for including papers in the review | "Published 2019-2024, peer-reviewed, English language" |
 | `{{input.exclusion_criteria}}` | No | Criteria for excluding papers | "Opinion pieces, conference abstracts only, non-empirical studies" |
+| `{{input.field_specific_standards}}` | Yes | Field-specific reporting standards | `CONSORT for RCTs, STROBE for observational studies` |
+| `{{input.known_limitations}}` | Yes | Known limitations or constraints in the existing literature | `Most studies use self-reported data. Limited longitudinal evidence.` |
+| `{{input.literature_summary}}` | Yes | A summary of the existing literature on the topic | `Three meta-analyses have examined this relationship...` |
+| `{{input.research_topic}}` | Yes | The research area or question to investigate | `Machine learning applications in early disease detection` |
 
 ## Outputs
 

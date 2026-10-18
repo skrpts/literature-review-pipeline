@@ -1,5 +1,16 @@
 # Release Notes
 
+## v1.2.33
+GH#1044 — the last of the required-but-undocumented inputs, resolved by testing whether the existing table name is itself required by a prompt rather than by how similar the names look. documented research_topic. Rows generated from the requiring prompt's own declared description, example and required flag. No behaviour change; documentation only.
+
+## v1.2.32
+GH#1044 — document the inputs this workflow's prompts REQUIRE but its Inputs table never listed. A user supplying exactly what the table asked for was running with required parameters unsatisfied — a silent wrong run, not a documentation nicety. documented 4 input(s): field_specific_standards, known_limitations, literature_summary, research_topic. Every row is generated from the requiring prompt's own declared description, example and required flag — none invented. No behaviour change; documentation only.
+
+## v1.2.31
+GH#1011 — 1 step(s) that declared the non-existent `local.transform` now declare the LLM step type they were already dispatched as, and reference the shared prompt their skill never had: `dedup-and-merge` → `synthesis`.
+
+These steps had no `prompt:` because `local.*` types need none, so the engine's LLM default had nothing to send: the author saw the model complaining about a prompt nobody wrote. **Output changes** — from a complaint to the thing the skill describes. Shared deps re-pinned to 1.0.4 with the published bundle checksum.
+
 ## v1.2.30
 GH#818 Phase 1 (Tier 1) — fix intent-vs-output: the pipeline promised a written literature review but ran search/summarise/interpret/gaps/assess → polish (it polished the ANALYSIS). The `literature-review-draft` prompt was shipped but never wired in. Wire it on a dedicated local `literature-review-drafting` skill ("Literature Review Drafting"): …methodology → **literature-review-draft(draft)** → polish. Re-point its summaries ref to `{{steps.Source Summarization.output}}` (resolvable title). Polish binds `source` `from_step "Literature Review Drafting"`; coherent-lock all deps to current published (repin `polish-language` → 1.0.5 etc.). contents skills 1→2.
 
