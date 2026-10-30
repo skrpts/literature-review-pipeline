@@ -70,12 +70,20 @@ execution:
     prompt: "interpret-data"
     step_type: "synthesis"
     output: { name: "interpretation", type: "text" }
+    bindings:
+      source:
+        from_step: "Source Summarization"
+        field: output
   - skill: "citation-extraction"
     prompt: "extract-citations"
     step_type: "synthesis"
     output: { name: "citations", type: "list" }
     context:
       citation_style: "Harvard"
+    bindings:
+      source:
+        from_step: "Data Interpretation"
+        field: output
   - skill: "dedup-and-merge"
     prompt: "dedup-and-merge"
     step_type: "synthesis"
@@ -84,6 +92,10 @@ execution:
     prompt: "identify-research-gaps"
     step_type: "synthesis"
     output: { name: "research_gaps", type: "text" }
+    bindings:
+      source:
+        from_step: "Data Interpretation"
+        field: output
   - parallel:
     - skill: "evidence-claim-check"
       prompt: "check-evidence-claims"
@@ -91,10 +103,18 @@ execution:
       output: { name: "evidence_report", type: "text" }
       context:
         evidence_rigour: "Standard"
+      bindings:
+        source:
+          from_step: "Research Gap Identification"
+          field: output
   - skill: "methodology-assessment"
     prompt: "assess-methodology"
     step_type: "review"
     output: { name: "methodology_assessment", type: "text" }
+    bindings:
+      source:
+        from_step: "Research Gap Identification"
+        field: output
   - skill: "literature-review-drafting"
     prompt: "literature-review-draft"
     step_type: "generation"
@@ -118,6 +138,10 @@ execution:
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"
+      bindings:
+        source:
+          from_step: "Language Polish"
+          field: output
 ---
 
 ## Overview

@@ -1,5 +1,10 @@
 # Release Notes
 
+## v1.2.34
+GH#1100 consumer wave batch 6 — declare the data flow these steps were resolving positionally. 6 binding(s) added.
+
+`identify-research-gaps` (slot "Prior Analysis") binds Data Interpretation rather than its positional predecessor, which emits merged sources. The interpretation is the prior analysis.
+
 ## v1.2.33
 GH#1044 — the last of the required-but-undocumented inputs, resolved by testing whether the existing table name is itself required by a prompt rather than by how similar the names look. documented research_topic. Rows generated from the requiring prompt's own declared description, example and required flag. No behaviour change; documentation only.
 
